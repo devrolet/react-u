@@ -39,26 +39,18 @@ function App() {
         <section id="core-concepts">
           <h2>Time to get started!</h2>
           <ul>
+            {/* Core way to add, not very dynamic */}
             <CoreConcept 
               title={CORE_CONCEPTS[0].title} 
               description={CORE_CONCEPTS[0].description}
               image={CORE_CONCEPTS[0].image}
              />
-             <CoreConcept 
-              title={CORE_CONCEPTS[1].title} 
-              description={CORE_CONCEPTS[1].description}
-              image={CORE_CONCEPTS[1].image}
-             />
-             <CoreConcept 
-              title={CORE_CONCEPTS[2].title} 
-              description={CORE_CONCEPTS[2].description}
-              image={CORE_CONCEPTS[2].image}
-             />
-             <CoreConcept 
-              title={CORE_CONCEPTS[3].title} 
-              description={CORE_CONCEPTS[3].description}
-              image={CORE_CONCEPTS[3].image}
-             />
+             {/* Alt way to add but requires numbering each */}
+             {/* Uses JS spread operator to output data */}
+             <CoreConcept {...CORE_CONCEPTS[1]} />
+             <CoreConcept {...CORE_CONCEPTS[2]} />
+             <CoreConcept {...CORE_CONCEPTS[3]} />
+
           </ul>
         </section>
         
