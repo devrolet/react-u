@@ -1,4 +1,6 @@
+import reactImg from './assets/react-core-concepts.png';
 const reactDescriptions = ['Fundamental', 'Crucial', 'Core'];
+const altText = "Stylized atoms"
 
 const genRandomInt = max => Math.floor(Math.random() * (max + 1));
 
@@ -7,7 +9,7 @@ const genRandomInt = max => Math.floor(Math.random() * (max + 1));
 function Header() {
   return (
     <header>
-        <img src="src/assets/react-core-concepts.png" alt="Stylized atom" />
+        <img src={reactImg} alt={altText} />
         <h1>React Essentials</h1>
         <p>
           {/* {}: Adds dynamic value to React component, Any JS can be added aside from if, for, func def and other block statements. Must create a value */}
