@@ -1,3 +1,5 @@
+import "./CoreConcept.css";
+
 // Object destructuring. Must have same name in function and data so it matches
 export default function CoreConcept({image, title, description}) {
     return (
