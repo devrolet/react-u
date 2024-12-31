@@ -1,15 +1,22 @@
+import { useState } from "react";
 import { CORE_CONCEPTS } from "./data";
 import Header from './components/Header/Header';
 import CoreConcept from './components/CoreConcept/CoreConcept';
 import TabButton from "./components/TabButton/TabButton";
 
 function App() {
+  // TODO: ALERT: ONLY CALL HOOKS INSIDE OF COMPONENT FUNCTIONS
+  // TODO: ALERT: ONLY CALL HOOKS ON THE TOP LEVEL
+  useState();
 
-  let tabContent = 'Please click a button'
+  // TODO: useState() always yield exactly two elements. Names are your choice, but the naming convention is [theAction, setTheAction].
+  const [selectedTopic, setSelectedTopic] = useState('Please click a button');
+  // first element = current state value: provided by React. May change if the component function is executed again
+  // second element = state updating function: updates the stored value & "tells" React to re-execute the component function in which useState() was called
+  // useState argument = Initial state value: Stored by React
 
   function handleSelect(selectedButton) { 
-
-     tabContent = selectedButton;
+     setSelectedTopic(selectedButton);
   };
 
   return (
@@ -41,7 +48,7 @@ function App() {
             <TabButton onSelect={() => handleSelect('props')}>Props</TabButton>
             <TabButton onSelect={() => handleSelect('state')}>State</TabButton>
           </menu>
-          {tabContent}
+          {selectedTopic}
         </section>
         
       </main>
