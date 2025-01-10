@@ -27,18 +27,10 @@ function App() {
         <section id="core-concepts">
           <h2>Core Concepts</h2>
           <ul>
-            {/* Core way to add, not very dynamic */}
-            <CoreConcept 
-              title={CORE_CONCEPTS[0].title} 
-              description={CORE_CONCEPTS[0].description}
-              image={CORE_CONCEPTS[0].image}
-             />
-             {/* Alt way to add but requires numbering each */}
-             {/* Uses JS spread operator to output data */}
-             <CoreConcept {...CORE_CONCEPTS[1]} />
-             <CoreConcept {...CORE_CONCEPTS[2]} />
-             <CoreConcept {...CORE_CONCEPTS[3]} />
-
+            {/* Dynamic way to add: use () after arrow instead of {} */}
+            {CORE_CONCEPTS.map((conceptItem) => (
+              <CoreConcept key={conceptItem.title} {...conceptItem} />
+            ))}
           </ul>
         </section>
         <section id="examples">
